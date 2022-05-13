@@ -1,0 +1,59 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Enter your name"
+      formControlName="name"
+    />
+    <span
+      *ngIf="
+        !registrationForm.get('name').valid &&
+        registrationForm.get('name').touched
+      "
+      style="color: red"
+      >Sorry, but name is required</span
+    >
+  </div>
+  <div class="form-group">
+    <label>Age</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="How old are you?"
+      formControlName="age"
+    />
+  </div>
+  <div class="form-group">
+    <label>Email address</label>
+    <input
+      type="email"
+      class="form-control"
+      id="exampleInputEmail1"
+      placeholder="Enter email"
+      formControlName="email"
+    />
+    <small id="emailHelp" class="form-text text-muted"
+      >We'll never share your email with anyone else.</small
+    >
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="exampleInputPassword1"
+      placeholder="Password"
+      formControlName="password"
+    />
+  </div>
+
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="registrationForm.invalid"
+  >
+    Submit
+  </button>
+</form>

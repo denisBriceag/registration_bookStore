@@ -1,0 +1,33 @@
+<div class="card" style="width: 25rem; display: flex; flex-direction: row">
+  <img
+    [src]="book.image"
+    class="card-img-top"
+    alt="..."
+    style="width: 12rem; height: 19rem; cursor: pointer"
+  />
+  <div class="card-body">
+    <h5 class="card-title" style="min-height: 48px">{{ book.title }}</h5>
+    <p class="card-text" style="font-size: 12px">
+      {{ book.summary | shorten: 134 }}
+    </p>
+    <p class="card-title">{{ book.author }}</p>
+    <p class="card-title" style="color: rgb(55, 175, 55)">
+      {{ book.price.displayValue | currency: "EUR" }}
+    </p>
+    <div class="btns">
+      <a
+        class="btn btn-primary"
+        style="color: #fff; background-color: #fe881a; border-color: #fe881a"
+        (click)="addToCart(book.ISBN)"
+        >Add to Cart</a
+      >
+      <span
+        class="fa fa-heart"
+        [class.checked]="isClicked"
+        (click)="likeToggle()"
+        style="margin-left: 5%; cursor: pointer"
+      >
+      </span>
+    </div>
+  </div>
+</div>

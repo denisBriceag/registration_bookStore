@@ -1,0 +1,142 @@
+<div class="d-flex flex-column p-1 bg-white" style="width: 230px">
+  <a
+    class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+  >
+    <span class="fs-3 fw-bold">Filters</span>
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-1">
+      <span class="fs-5 fw">Authors</span>
+      <div style="margin-top: 15px">
+        <ul
+          class="btn-toggle-nav list-unstyled fw-normal pb-1 small"
+          style="margin-top: 2%"
+          *ngFor="let author of arrOfAuthors"
+        >
+          <li>
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 16 27"
+              xmlns="http://www.w3.org/2000/svg"
+              class="_2Iqv73"
+              fill="currentColor"
+            >
+              <path
+                d="M16 23.207L6.11 13.161 16 3.093 12.955 0 0 13.161l12.955 13.161z"
+                fill="currentColor"
+                class="_3zK8He"
+              ></path>
+            </svg>
+            <a
+              class="link-dark rounded"
+              style="cursor: pointer; text-decoration: none"
+              (click)="filterByAuthor(author)"
+              >{{ author }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="class=mb-1" style="margin-top: 15px">
+      <span class="fs-5 fw">Prices</span>
+      <div style="margin-top: 15px">
+        <ul
+          class="btn-toggle-nav list-unstyled fw-normal pb-1 small"
+          style="
+            margin-top: 2%;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 5px;
+            row-gap: 5px;
+            width: 67%;
+          "
+        >
+          <li class="money-range">
+            <a
+              class="link-dark rounded"
+              style="cursor: pointer; text-decoration: none"
+              (click)="onChoosePrice(5, 10)"
+              >{{ 5 + "-" + 10 + " &euro;" }}</a
+            >
+          </li>
+          <li class="money-range">
+            <a
+              class="link-dark rounded"
+              style="cursor: pointer; text-decoration: none"
+              (click)="onChoosePrice(10, 15)"
+              >{{ 10 + "-" + 15 + " &euro;" }}</a
+            >
+          </li>
+          <li class="money-range">
+            <a
+              class="link-dark rounded"
+              style="cursor: pointer; text-decoration: none"
+              (click)="onChoosePrice(15, 20)"
+              >{{ 15 + "-" + 20 + " &euro;" }}</a
+            >
+          </li>
+          <li class="money-range">
+            <a
+              class="link-dark rounded"
+              style="cursor: pointer; text-decoration: none"
+              (click)="onChoosePrice(20, 25)"
+              >{{ 20 + "-" + 25 + " &euro;" }}</a
+            >
+          </li>
+          <li class="money-range">
+            <a
+              class="link-dark rounded"
+              style="cursor: pointer; text-decoration: none"
+              (click)="onChoosePrice(25, 20)"
+              >{{ 25 + "-" + 30 + " &euro;" }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="class=mb-1" style="margin-top: 15px">
+      <span class="fs-5 fw">ISBN</span>
+      <div style="margin-top: 15px">
+        <ul
+          class="btn-toggle-nav list-unstyled fw-normal pb-1 small"
+          style="
+            margin-top: 2%;
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 5px;
+            row-gap: 5px;
+            width: 67%;
+          "
+        >
+          <div class="input-group mb-3">
+            <div class="input-group-prepend"></div>
+
+            <input
+              type="text"
+              class="form-control"
+              style="border-radius: 5px"
+              aria-label="Default"
+              aria-describedby="inputGroup-sizing-default"
+              [formControl]="isbnValue"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+              style="margin-left: 10px; margin-top: 8px; cursor: pointer"
+              (click)="searchById()"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
+          </div>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

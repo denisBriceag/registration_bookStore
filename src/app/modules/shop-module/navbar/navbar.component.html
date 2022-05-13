@@ -1,0 +1,87 @@
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+    <div>
+      <a
+        class="navbar-brand"
+        style="color: white; cursor: pointer"
+        (click)="onChangeRoute('registrationPannel')"
+        [routerLink]="['/registrationPannel']"
+      >
+        <span class="fa fa-user"></span>
+      </a>
+      <a
+        class="navbar-brand"
+        style="color: white; cursor: pointer"
+        (click)="onChangeRoute('bookStore')"
+        [routerLink]="['/bookStore']"
+      >
+        <strong *ngIf="!pageName; else greet"> Book Store</strong>
+        <ng-template #greet>
+          <strong>Welcome, {{ pageName }}!</strong>
+        </ng-template>
+      </a>
+    </div>
+    <form class="d-flex input-group w-auto">
+      <input
+        type="search"
+        type="search"
+        class="form-control rounded"
+        placeholder="Search by title"
+        aria-label="Search"
+        #search
+      />
+      <span class="input-group-text border-0" id="search-addon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          fill="currentColor"
+          class="bi bi-search"
+          viewBox="0 0 16 16"
+          (click)="searchByTitle(search)"
+        >
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+          />
+        </svg>
+      </span>
+      <span class="input-group-text border-0" id="wish-addon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26    "
+          fill="currentColor"
+          class="bi bi-bag-heart-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.5 4v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5ZM8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1Zm0 6.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"
+          />
+        </svg>
+      </span>
+      <span class="input-group-text border-0" id="cart-addon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          fill="currentColor"
+          class="bi bi-cart-check-fill"
+          viewBox="0 0 16 16"
+          (click)="openCart()"
+        >
+          <path
+            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"
+          />
+        </svg>
+        <span
+          *ngIf="selectedBooks.length > 0"
+          class="badge rounded-pill badge-notification bg-danger"
+          >{{ selectedBooks?.length }}</span
+        >
+      </span>
+      <!-- Notification dropdown -->
+
+      <!-- Notification dropdown -->
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,38 @@
+<tr class="border-bottom">
+  <td>
+    <div class="d-flex align-items-center">
+      <div>
+        <img
+          class="pic"
+          [src]="book.image"
+          alt=""
+          style="width: 8rem; height: 12rem"
+        />
+      </div>
+      <div class="ps-3 d-flex flex-column justify-content">
+        <p class="fw-bold">{{ book.title }}</p>
+        <small class="d-flex">
+          <span class="text-muted">Author:{{ book.author }}</span>
+        </small>
+        <small class="">
+          <span class="text-muted">ISBN:{{ book.ISBN }}</span>
+        </small>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="d-flex">
+      <p class="pe-3">
+        <span class="red">{{ book.price.value }} &euro;</span>
+      </p>
+    </div>
+  </td>
+  <td>
+    <div class=".d-sm-flex align-items-center; justify-content:center">
+      <span class="pe-3 text-muted">Quantity</span>
+      <span class="pe-3">
+        <input class="ps-2" type="number" value="0" style="width: 3rem"
+      /></span>
+    </div>
+  </td>
+</tr>

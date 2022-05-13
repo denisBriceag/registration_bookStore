@@ -1,0 +1,46 @@
+#search-addon {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#cart-addon {
+  background-color: transparent;
+  cursor: pointer;
+  padding-right: 0;
+}
+
+#wish-addon {
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.navbar-light {
+  padding-left: 2%;
+  padding-right: 1%;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 25px;
+}
+
+nav {
+  background-color: #b23cfd;
+}
+
+.bi-search {
+  color: white;
+}
+
+.bi-cart-check-fill {
+  color: white;
+}
+
+.cart-main {
+  display: flex;
+  column-gap: 0;
+  .rounded-pill {
+    height: 21px;
+  }
+}

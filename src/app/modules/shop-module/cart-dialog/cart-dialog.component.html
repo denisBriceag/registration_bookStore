@@ -1,0 +1,31 @@
+<section class="dialog-section">
+  <table class="table table-borderless">
+    <tbody style="overflow-y: scroll">
+      <div *ngFor="let book of selectedBooks">
+        <app-cart-book [book]="book"></app-cart-book>
+      </div>
+    </tbody>
+    <tr></tr>
+  </table>
+  <div class="cart-controll">
+    <td style="padding-top: 2rem">
+      <!-- <div class="d-flex align-items-center">
+                    </div> -->
+      <div class="ps-3 d-flex flex-column">
+        <p class="fw-bold" style="margin-bottom: 0px; font-size: 22px">Total</p>
+      </div>
+    </td>
+    <td style="padding-top: 2rem">
+      <div class="d-flex">
+        <p class="pe-3" style="margin-bottom: 0px">
+          <span class="red" style="font-size: 22px">45.00 &euro;</span>
+        </p>
+      </div>
+    </td>
+    <td style="padding-top: 2rem">
+      <div class="d-flex">
+        <button class="btn btn-primary" (click)="onClose()">Checkout</button>
+      </div>
+    </td>
+  </div>
+</section>
