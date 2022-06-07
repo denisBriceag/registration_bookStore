@@ -1,0 +1,8 @@
+<main>
+  <div style="width: 85%">
+    <!-- Here will be implemented ngFor -->
+    <ng-container *ngFor="let book of books">
+      <app-whishlist-book [book]="book"></app-whishlist-book>
+    </ng-container>
+  </div>
+</main>

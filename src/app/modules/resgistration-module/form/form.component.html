@@ -1,59 +1,95 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label>Name</label>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Enter your name"
-      formControlName="name"
-    />
-    <span
-      *ngIf="
-        !registrationForm.get('name').valid &&
-        registrationForm.get('name').touched
-      "
-      style="color: red"
-      >Sorry, but name is required</span
+<section>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter your name"
+        formControlName="name"
+      />
+      <span
+        *ngIf="
+          !registrationForm.get('name').valid &&
+          registrationForm.get('name').touched
+        "
+        style="color: red"
+        >Sorry, but name is required</span
+      >
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="How old are you?"
+        formControlName="age"
+      />
+    </div>
+    <div class="form-group">
+      <label>Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        placeholder="Enter email"
+        formControlName="email"
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </div>
+    <div class="form-group">
+      <label>Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        formControlName="confirmPassword"
+      />
+      <div
+        *ngIf="
+          this.registrationForm.get('confirmPassword').errors &&
+          this.registrationForm.get('password').dirty &&
+          this.registrationForm.get('confirmPassword').touched
+        "
+        style="color: red"
+      >
+        <div
+          *ngIf="this.registrationForm.get('confirmPassword').errors.required"
+        >
+          Confirm Password is required
+        </div>
+        <div
+          *ngIf="this.registrationForm.get('confirmPassword').errors.mustMatch"
+        >
+          Passwords must match
+        </div>
+      </div>
+    </div>
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
     >
-  </div>
-  <div class="form-group">
-    <label>Age</label>
-    <input
-      type="text"
-      class="form-control"
-      placeholder="How old are you?"
-      formControlName="age"
-    />
-  </div>
-  <div class="form-group">
-    <label>Email address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="exampleInputEmail1"
-      placeholder="Enter email"
-      formControlName="email"
-    />
-    <small id="emailHelp" class="form-text text-muted"
-      >We'll never share your email with anyone else.</small
-    >
-  </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="exampleInputPassword1"
-      placeholder="Password"
-      formControlName="password"
-    />
-  </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="registrationForm.invalid"
+      >
+        Submit
+      </button>
 
-  <button
-    type="submit"
-    class="btn btn-primary"
-    [disabled]="registrationForm.invalid"
-  >
-    Submit
-  </button>
-</form>
+      <p style="color: blue; cursor: pointer" (click)="switchToLogin()">
+        Go back to login
+      </p>
+    </div>
+  </form>
+</section>

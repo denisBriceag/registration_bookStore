@@ -10,8 +10,16 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./cart-dialog.component.scss'],
 })
 export class CartDialogComponent implements OnInit, OnDestroy {
-  selectedBooks: Book[];
+  selectedBooks: Book[] = [];
   destroy$: Subject<void> = new Subject<void>();
+
+  public get totals() {
+    let count = 0;
+    this.selectedBooks.forEach((book: Book) => {
+      count += book.qty * book.price.value;
+    });
+    return count.toFixed(2);
+  }
 
   constructor(private shopService: ShopService, private modalRef: BsModalRef) {}
 
@@ -21,7 +29,6 @@ export class CartDialogComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     console.log(this.shopService.booksForCheckout.value);
-
     this.selectedBooks = this.shopService.booksForCheckout.value;
   }
 

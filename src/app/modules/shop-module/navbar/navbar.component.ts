@@ -1,5 +1,4 @@
 import {
-  ChangeDetectorRef,
   Component,
   ElementRef,
   OnDestroy,
@@ -9,12 +8,10 @@ import {
 import { ShopService } from '../services/shop.service';
 import { Book } from '../../../interfaces/book.interface';
 import { RouterService } from '../services/router.service';
-import { CartService } from '../services/cart.service';
 import { Subject, takeUntil } from 'rxjs';
-import { MatDialog } from '@angular/material/dialog';
 import { CartDialogComponent } from '../cart-dialog/cart-dialog.component';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { RegistrationService } from '../services/registration.service';
+import { CredentialsService } from '../services/credential.service';
 
 @Component({
   selector: 'app-navbar',
@@ -32,10 +29,14 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(
     private shopService: ShopService,
-    private dialog: MatDialog,
     private routingService: RouterService,
-    private modalService: BsModalService
+    private modalService: BsModalService,
+    private credentialsService: CredentialsService
   ) {}
+
+  get isToken() {
+    return this.credentialsService.accessToken;
+  }
 
   ngOnInit(): void {
     this.shopService.selectedBooksArray

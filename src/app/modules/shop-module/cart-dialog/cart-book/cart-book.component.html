@@ -31,7 +31,12 @@
     <div class=".d-sm-flex align-items-center; justify-content:center">
       <span class="pe-3 text-muted">Quantity</span>
       <span class="pe-3">
-        <input class="ps-2" type="number" value="0" style="width: 3rem"
+        <input
+          [formControl]="control"
+          class="ps-2"
+          type="number"
+          value="0"
+          style="width: 3rem"
       /></span>
     </div>
   </td>

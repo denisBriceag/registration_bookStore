@@ -15,8 +15,10 @@ import { RouterModule } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CartDialogComponent } from './cart-dialog/cart-dialog.component';
 import { CartBookComponent } from './cart-dialog/cart-book/cart-book.component';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { FooterComponent } from './footer/footer.component';
+import { WhishlistComponent } from './whishlist/whishlist.component';
+import { WhishlistBookComponent } from './whishlist/whishlist-book/whishlist-book.component';
 
 @NgModule({
   entryComponents: [CartDialogComponent, CartBookComponent],
@@ -30,6 +32,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ShortenPipe,
     CartDialogComponent,
     CartBookComponent,
+    FooterComponent,
+    WhishlistComponent,
+    WhishlistBookComponent,
   ],
   imports: [
     HttpClientModule,
@@ -48,6 +53,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     MainComponent,
     FilterComponent,
     CartDialogComponent,
+    FooterComponent,
   ],
 })
 export class ShopModule {}

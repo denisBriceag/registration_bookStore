@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterService } from '../shop-module/services/router.service';
 
 @Component({
   selector: 'app-registration',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-  constructor() {}
+  formSwitcher: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private routerService: RouterService) {}
+
+  ngOnInit(): void {
+    this.formSwitcher = this.routerService.formSwitcher;
+  }
 }

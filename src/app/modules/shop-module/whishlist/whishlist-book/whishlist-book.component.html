@@ -1,0 +1,42 @@
+<div
+  class="card"
+  style="display: flex; flex-direction: row; align-items: center"
+>
+  <img
+    [src]="book.image"
+    class="card-img-top"
+    alt="..."
+    style="width: 6rem; height: 10rem; cursor: pointer"
+  />
+  <div class="card-body">
+    <div>
+      <h1 class="card-title" style="min-height: 48px">{{ book.title }}</h1>
+      <em>
+        <p class="card-title" style="margin: auto">by {{ book.author }}</p></em
+      >
+    </div>
+    <p
+      class="card-text"
+      style="margin: auto; text-align: center; font-size: 14px"
+    >
+      {{ book.summary | shorten: 134 }}
+    </p>
+    <h3
+      class="card-title"
+      style="
+        margin: auto;
+        color: rgb(55, 175, 55);
+        font-weight: 600;
+        margin-left: 10px;
+      "
+    >
+      {{ book.price.displayValue | currency: "EUR" }}
+    </h3>
+    <a
+      class="btn btn-primary"
+      style="color: #fff; background-color: #fe881a; border-color: #fe881a"
+      (click)="addToCart(book.ISBN)"
+      >Add to Cart</a
+    >
+  </div>
+</div>

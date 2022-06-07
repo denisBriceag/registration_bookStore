@@ -1,6 +1,4 @@
-export interface Form {
-  name: string;
-  age: string;
+export interface Login {
   email: string;
   password: string;
   returnSecureToken: boolean;

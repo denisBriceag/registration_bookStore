@@ -3,12 +3,13 @@
 /* Importing Bootstrap SCSS file. */
 @import "~bootstrap/scss/bootstrap";
 
-html,
-body {
+html {
   height: 100%;
 }
+
 body {
   margin: 0;
+  box-sizing: border-box;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -27,3 +28,9 @@ body {
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+.modal-content {
+  overflow-y: scroll;
+  max-height: 88vh;
+  overflow-x: hidden;
+}

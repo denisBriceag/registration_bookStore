@@ -7,4 +7,5 @@ export interface Book {
   summary: string;
   image: string;
   price: Price;
+  qty?: number;
 }

@@ -1,0 +1,15 @@
+.cart-controll {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  bottom: 0px;
+  background-color: #efeaea;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+
+  .total {
+    display: flex;
+  }
+}

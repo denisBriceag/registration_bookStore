@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { distinct, map, pluck, takeUntil } from 'rxjs';
+import { map, takeUntil } from 'rxjs';
 import { Book } from 'src/app/interfaces/book.interface';
 import { ShopService } from '../../services/shop.service';
 import { Subject } from 'rxjs';
@@ -39,14 +39,6 @@ export class FilterComponent implements OnInit, OnDestroy {
   }
 
   onChoosePrice(a: number, b: number) {
-    // let arrOfNums: number[];
-    // console.log((event.target as HTMLInputElement).value);
-
-    // (event.target as HTMLInputElement).value
-    //   .split('')
-    //   .map((el) =>
-    //     typeof el === 'number' ? arrOfNums.push(el) : console.log(el)
-    //   );
     this.shopService.filterByPrice(a, b);
   }
 

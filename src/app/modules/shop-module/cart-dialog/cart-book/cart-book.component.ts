@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Book } from '../../../../interfaces/book.interface';
 
 @Component({
@@ -7,9 +8,14 @@ import { Book } from '../../../../interfaces/book.interface';
   styleUrls: ['./cart-book.component.scss'],
 })
 export class CartBookComponent implements OnInit {
+  control: FormControl;
   @Input()
   book: Book;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.book.qty);
+
+    this.control = new FormControl(this.book.qty);
+  }
 }

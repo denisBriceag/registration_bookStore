@@ -6,7 +6,9 @@
     style="width: 12rem; height: 19rem; cursor: pointer"
   />
   <div class="card-body">
-    <h5 class="card-title" style="min-height: 48px">{{ book.title }}</h5>
+    <h3 class="card-title" style="min-height: 48px; font-weight: 700">
+      {{ book.title }}
+    </h3>
     <p class="card-text" style="font-size: 12px">
       {{ book.summary | shorten: 134 }}
     </p>
@@ -24,7 +26,7 @@
       <span
         class="fa fa-heart"
         [class.checked]="isClicked"
-        (click)="likeToggle()"
+        (click)="likeToggle(book.ISBN)"
         style="margin-left: 5%; cursor: pointer"
       >
       </span>

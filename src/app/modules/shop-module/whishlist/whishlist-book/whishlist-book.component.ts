@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Book } from 'src/app/interfaces/book.interface';
-import { ShopService } from '../../../services/shop.service';
+import { ShopService } from '../../services/shop.service';
 
 @Component({
-  selector: 'app-book',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.scss'],
+  selector: 'app-whishlist-book',
+  templateUrl: './whishlist-book.component.html',
+  styleUrls: ['./whishlist-book.component.scss'],
 })
-export class BookComponent implements OnInit {
+export class WhishlistBookComponent implements OnInit {
   @Input() book: Book;
   isClicked = false;
   constructor(private shopService: ShopService) {}

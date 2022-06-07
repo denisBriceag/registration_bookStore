@@ -10,6 +10,7 @@ export class ShopService {
   booksArray = new BehaviorSubject<Book[]>([]);
   selectedBooksArray = new Subject<Book>();
   booksForCheckout = new BehaviorSubject<Book[]>([]);
+  whishlistBooks = new BehaviorSubject<Book[]>([]);
 
   searchByTitle(val: string) {
     let filteredBooks = this.allBooks.filter(
